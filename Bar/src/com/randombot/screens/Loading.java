@@ -15,20 +15,20 @@ import static com.randombot.common.Assets.*;
 import com.randombot.bar.Bar;
 import com.randombot.common.tweens.Particle;
 import com.randombot.common.tweens.ParticleAccessor;
-import com.randombot.objects.Cuadro;
+import com.randombot.objects.Quad;
 
 public class Loading extends BaseScreen {
 
 	private AssetManager am;
 	private Particle drawingPosition;
-	private Cuadro barraLoading, progresoLoading;
-	private float barraX, barraY, barraW, barraH, progreso;
+	private Quad barraLoading, progresoLoading;
+	private float barraX, barraY, barraW, barraH, progress;
 
 	@Override
 	public void create() {
-		Cuadro.load();
-		this.barraLoading = Cuadro.getBarraDeVida();
-		this.progresoLoading = Cuadro.getProgresoLoading();
+		Quad.load();
+		this.barraLoading = Quad.getHealthBar();
+		this.progresoLoading = Quad.getProgressLoading();
 
 		float halfh = screenh/2;
 		float halfw = screenw/2;
@@ -37,9 +37,9 @@ public class Loading extends BaseScreen {
 		this.barraH = halfh / 6f;
 		this.barraX = halfw - this.barraW/2;
 		this.barraY = halfh - this.barraH/2f;
-		this.drawingPosition = new Particle(-barraW, 0, 0, 0); // Sólo se moverá la x
+		this.drawingPosition = new Particle(-barraW, 0, 0, 0);
 
-		this.progreso = 0.05f;
+		this.progress = 0.05f;
 
 		this.am = new AssetManager();
 	}
@@ -52,33 +52,27 @@ public class Loading extends BaseScreen {
 		am.load("data/screens/background/bg.atlas", TextureAtlas.class);
 		am.load("data/font/arial.fnt", BitmapFont.class);
 
-		/*audio.load(am, audio.M_MOONLIGHTHALL, audio.S_BONUS1, audio.S_BONUS2, audio.S_DB1, audio.S_DB2,
-				audio.S_DEAD1, audio.S_DEAD2, audio.S_GAMEOVER, audio.S_LEVELUP, audio.S_MAGIC1,
-				audio.S_MAGIC2, audio.S_SB1, audio.S_SB2, audio.S_WB1, audio.S_WB2);	*/
+		/*load music/sound here*/
 	}
 
 	@Override
 	public void hide() {
 		Tween.to(drawingPosition, ParticleAccessor.POSITION_XY, .25f).target(screenw, 0).start(tm);	
 	}
-	
+
 	@Override
 	public void render(float delta) {			
 		if (am.update()){
-			/*audio.postLoading(am, audio.M_MOONLIGHTHALL, audio.S_BONUS1, audio.S_BONUS2, audio.S_DB1, audio.S_DB2,
-					audio.S_DEAD1, audio.S_DEAD2, audio.S_GAMEOVER, audio.S_LEVELUP, audio.S_MAGIC1,
-					audio.S_MAGIC2, audio.S_SB1, audio.S_SB2, audio.S_WB1, audio.S_WB2);	*/
+			/*init music/sound here*/
 
 			setTextures();
-			
-			// Se hace una vez.
+
 			game.play.create();
 
 			game.setScreen(game.play);
-			//return;
 		}
 
-		progreso = am.getProgress();	
+		progress = am.getProgress();	
 
 		Gdx.gl.glClearColor(1f, 1f, 1f, 1f);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
@@ -86,20 +80,20 @@ public class Loading extends BaseScreen {
 
 	@Override
 	public void draw() {
-		sb.setColor(0f, progreso, 1f, 1f);
+		sb.setColor(0f, progress, 1f, 1f);
 		barraLoading.draw(sb, drawingPosition.x, barraY, barraW, barraH);
-		sb.setColor(1f-progreso, 1f, 0f, 1f);
-		progresoLoading.draw(sb, drawingPosition.x, barraY, barraW*progreso, barraH);
+		sb.setColor(1f-progress, 1f, 0f, 1f);
+		progresoLoading.draw(sb, drawingPosition.x, barraY, barraW*progress, barraH);
 	}	
-	
+
 	private void setTextures(){
 		font = am.get("data/font/arial.fnt", BitmapFont.class);
-		
+
 		BaseScreen.font.setScale(Bar.changeResolution(.575f));	
 		BaseScreen.font.getRegion().getTexture().setFilter(TextureFilter.Linear, TextureFilter.Linear);
-		
+
 		TextureAtlas atlas = am.get("data/screens/play/play.atlas", TextureAtlas.class);
-		
+
 		beer = atlas.findRegion("drinks/cerveza");
 		cosmopolitan = atlas.findRegion("drinks/cosmopolitan");
 		whisky = atlas.findRegion("drinks/whisky");
@@ -131,13 +125,13 @@ public class Loading extends BaseScreen {
 		cachasManoFlip = new TextureRegion(cachasMano); cachasManoFlip.flip(true, false);
 		borrachoManoFlip = atlas.findRegion("people/borrachoMano");
 		borrachoMano = new TextureRegion(borrachoManoFlip); borrachoMano.flip(true, false);
-		
+
 
 		cod1 = atlas.findRegion("cod1");
 		cod2 = atlas.findRegion("cod2");
 		teachingFrame = atlas.findRegion("teachingFrame");
 		box = atlas.findRegion("box"); // pauseBox before
-		pauseBox = atlas.findRegion("box");;// atlas.findRegion("box");
+		pauseBox = atlas.findRegion("box");
 		numBox = atlas.findRegion("numBox");
 		play = atlas.findRegion("play");
 		playGreen = atlas.findRegion("playGreen");
@@ -150,12 +144,15 @@ public class Loading extends BaseScreen {
 		funbares3 = atlas.findRegion("funbares3");
 		facebook = atlas.findRegion("facebook");
 		twitter = atlas.findRegion("twitter");
-		
+
 		atlas = am.get("data/screens/background/bg.atlas", TextureAtlas.class);
-		
+
 		bg = atlas.findRegion("bg");
 		table = atlas.findRegion("table");
 	}
-	
-	public void dispose(){ this.am.dispose(); }
+
+	public void dispose(){ 
+		Quad.dispose();
+		this.am.dispose(); 
+	}
 }

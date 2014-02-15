@@ -87,7 +87,6 @@ public class Frame extends Tweenable {
 		sb.setColor(1f, 1f, 1f, super.def.angleORalpha);
 		sb.draw(showingTexture, def.x, def.y, srcX, srcY, w, h, 
 				def.scaleXY, def.scaleXY, 0);
-		//font.drawCenterLines(text, drawingPosition.x, drawingPosition.y, w, h, drawingPosition.scaleXY);
 		font.drawWrapped(sb, text, def.x, def.y+textHeight, w, HAlignment.CENTER);
 		sb.setColor(1f, 1f, 1f, 1f);
 	}
@@ -97,7 +96,6 @@ public class Frame extends Tweenable {
 	 */
 	public void drawText(){
 		sb.setColor(1f, 1f, 1f, super.def.angleORalpha);
-		//font.drawCenterLines(text, drawingPosition.x, drawingPosition.y, w, 0, drawingPosition.scaleXY);	
 		font.drawWrapped(sb, text, def.x, def.y+textHeight, w, HAlignment.CENTER);
 		sb.setColor(1f, 1f, 1f, 1f);
 	}

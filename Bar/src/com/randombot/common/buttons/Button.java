@@ -11,6 +11,7 @@ import aurelienribon.tweenengine.TweenManager;
 import aurelienribon.tweenengine.equations.Back;
 import aurelienribon.tweenengine.equations.Quint;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
@@ -197,8 +198,6 @@ public class Button extends Tweenable {
 	}
 
 	public void debug() {
-		System.out.println("Boton: " + "x -> " + def.x + ", y -> " + def.y);
-	}
-
-	
+		Gdx.app.log("Button Debug", "Boton: " + "x -> " + def.x + ", y -> " + def.y);
+	}	
 }

@@ -2,6 +2,7 @@ package com.randombot.common;
 
 import java.util.TreeMap;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
@@ -11,21 +12,7 @@ public class AudioManager {
 
 	public static final String M_MOONLIGHTHALL = "data/music/MoonlightHall.ogg";
 	
-	public static final String S_DB1 = "data/sound/db1.ogg"; // 0
-	public static final String S_DB2 = "data/sound/db2.ogg"; // 1
-	public static final String S_DEAD1 = "data/sound/dead1.ogg"; // 2
-	public static final String S_DEAD2 = "data/sound/dead2.ogg"; // 3
-	
-	public static final String S_GAMEOVER  = "data/sound/gameover.ogg";  // 4
-	public static final String S_LEVELUP = "data/sound/levelup.ogg"; // 5
-	public static final String S_MAGIC1 = "data/sound/magic1.ogg"; // 6
-	public static final String S_SB1 = "data/sound/sb1.ogg"; // 7
-	public static final String S_SB2 = "data/sound/sb2.ogg"; // 8
-	public static final String S_WB1 = "data/sound/wb1.ogg"; // 9
-	public static final String S_WB2 = "data/sound/wb2.ogg"; // 10
-	public static final String S_MAGIC2 = "data/sound/magic2.ogg"; // 11
-	public static final String S_BONUS1 = "data/sound/bonus1.ogg"; // 12
-	public static final String S_BONUS2 = "data/sound/bonus2.ogg"; // 13
+	public static final String S_DB1 = "SOUND_PATH_HERE"; // 13
 	
 	private TreeMap<String, Music> musica;	
 	private TreeMap<String, Sound> sonidos;	
@@ -130,7 +117,7 @@ public class AudioManager {
 		} else {
 			music = true;
 			try {
-				System.out.println("PLAY DE : " + musicPlaying);
+				Gdx.app.log("Music", "PLAY DE : " + musicPlaying);
 				temporalMusic = musica.get(musicPlaying);
 				temporalMusic.play();
 				temporalMusic.setLooping(true);		

@@ -27,7 +27,7 @@ public class TransitionScreen extends BaseScreen{
 
 	@Override
 	public void render(float delta) 
-	{	//Tiene que hacerlo todo el rato, sino se pierde el contexto de opengl en un pause y aparece el fondo negro		
+	{		
 		if(this.backTrack) 
 		{		
 			if(this.alpha >= 1)
@@ -45,7 +45,7 @@ public class TransitionScreen extends BaseScreen{
 				this.backTrack = true;
 				this.actualScreen = this.nextScreen;
 			} else {
-				this.alpha = this.alpha - 4*delta;	// 4 = alphaSpeed para tiempo t =~ 0.25, es decir 1/0.25 =~ 4
+				this.alpha = this.alpha - 4*delta;	// 4 = alphaSpeed ,time t =~ 0.25, 1/0.25 =~ 4
 			}
 		}
 

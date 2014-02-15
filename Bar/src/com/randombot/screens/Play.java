@@ -29,8 +29,8 @@ public class Play extends BaseScreen implements TextInputListener{
 	private final String LAST_SECONDS = "0x013455BF", TICKET = "0x00495110", 
 							TICKET_TIME = "0.004CDF8E", OFFER = "0.0042AE0F", 
 							OFFER_TIME = "0.0041BE4E", COD = "FunBEV",
-							FACEBOOK_URL = "https://www.facebook.com/Elviajerocafe",
-							TWITTER_URL = "https://twitter.com/el_viajero_cafe";
+							FACEBOOK_URL = "https://www.facebook.com/pages/Random-Bot/254928944622296",
+							TWITTER_URL = "https://twitter.com/randombot_games";
 	private boolean paused, teaching, hasTicket, hasOffer;
 	private float speed, minspeed, speedStep, timeDelta, screenXBefore, screenYBefore;
 	private int seconds, points, teachingStep;
@@ -399,7 +399,7 @@ public class Play extends BaseScreen implements TextInputListener{
 					if(hasOffer){
 						restartFromOfferOrTicket();
 					} else {
-						Gdx.input.getTextInput(this, "Has ganado!\nCanjea tu código para recibir\ntu recompensa.", "Código");
+						Gdx.input.getTextInput(this, "Has ganado!\nCanjea tu cï¿½digo para recibir\ntu recompensa.", "Cï¿½digo");
 					}
 				}
 			} else if (!drinkMove && drinkTouched){
@@ -413,13 +413,7 @@ public class Play extends BaseScreen implements TextInputListener{
 	@Override
 	public boolean touchDragged(int screenX, int screenY, int pointer) {
 		if (pointer == 0) {
-			//System.out.println("drag");
 			screenY = (int) (screenh - screenY);
-			/*if (paused) {
-
-			} else if (teaching) {
-
-			} else {*/
 			if (drinkTouched && !drinkMove) { 
 
 
@@ -440,7 +434,6 @@ public class Play extends BaseScreen implements TextInputListener{
 					speedStep += speedStep;
 				}
 			}
-			//}
 		}
 		return false;
 	}
@@ -476,12 +469,10 @@ public class Play extends BaseScreen implements TextInputListener{
 		boolean IZQUIERDA = false, DERECHA = true, FILA1 = true, FILA2 = false;
 
 		//Fila mÃ¡s cercana, primera
-		//float personW=screenw/2.5f, personH=screenh/2.5f;
-
 		people.add(new Person(FILA1, IZQUIERDA));//Iz
 		people.add(new Person(FILA1, DERECHA));//Dr
+		
 		//Segunda fila
-		//personW *= .7f; personH *= .7f;
 		people.add(new Person(FILA2, IZQUIERDA));//Iz
 		people.add(new Person(FILA2, DERECHA));//Dr		
 		for (Person p:people)
@@ -508,7 +499,7 @@ public class Play extends BaseScreen implements TextInputListener{
 
 	private void startHasTicket(int sec){
 		hasTicket = true;
-		Gdx.input.getTextInput(this, "Has ganado!\nCanjea tu código.", "Código");
+		Gdx.input.getTextInput(this, "Has ganado!\nCanjea tu cï¿½digo.", "Cï¿½digo");
 		seconds = sec;
 		ticketOfferTime.setText(sec2hourMin(seconds));
 		ticketOfferTime.startEntryAnimation(1f);
@@ -551,10 +542,7 @@ public class Play extends BaseScreen implements TextInputListener{
 	};
 
 	@Override
-	public void canceled() {
-		System.out.println("Cancelado ticket...");
-		//Gdx.input.getTextInput(this, "Has ganado!\nCanjea tu código para recibir tu recompensa.", "código");		
-	}
+	public void canceled() { }
 
 	@Override
 	public void input(String cod) {
@@ -562,10 +550,10 @@ public class Play extends BaseScreen implements TextInputListener{
 			System.out.println(cod);	
 			if(cod.equals(COD)){
 				//Irse a la pantalla de la oferta....
-				System.out.println("irse a la pantalla de la oferta...");
+				Gdx.app.log("Offer", "irse a la pantalla de la oferta...");
 				startOffer(OFFER_SECONDS);
 			} else {
-				Gdx.input.getTextInput(this, "Introduce un código correcto.", "Nuevo código.");
+				Gdx.input.getTextInput(this, "Introduce un cï¿½digo correcto.", "Nuevo cï¿½digo.");
 			}
 		}
 	}
