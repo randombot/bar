@@ -19,13 +19,15 @@ public class BarAndroid extends AndroidApplication implements IActionResolver {
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); 
 
 		AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
+		cfg.useImmersiveMode = true;
+		cfg.hideStatusBar = true;
+		cfg.useGL20 = true;
 		cfg.useAccelerometer = false;
 		cfg.useCompass = false;
+		cfg.useGLSurfaceViewAPI18 = false;
 		cfg.useWakelock = false;
-		cfg.useGL20 = true;
 
-		initialize(new Bar(this), cfg);
-		
+		initialize(new Bar(this), cfg);		
 	}
 
 	@Override
