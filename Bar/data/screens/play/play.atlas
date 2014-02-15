@@ -1,0 +1,254 @@
+
+play.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cod1
+  rotate: false
+  xy: 0, 207
+  size: 480, 800
+  orig: 480, 800
+  offset: 0, 0
+  index: -1
+cod2
+  rotate: false
+  xy: 481, 207
+  size: 480, 800
+  orig: 480, 800
+  offset: 0, 0
+  index: -1
+numBox
+  rotate: false
+  xy: 0, 107
+  size: 180, 99
+  orig: 180, 99
+  offset: 0, 0
+  index: -1
+musicOff
+  rotate: false
+  xy: 962, 943
+  size: 56, 64
+  orig: 56, 64
+  offset: 0, 0
+  index: -1
+musicOn
+  rotate: false
+  xy: 0, 42
+  size: 56, 64
+  orig: 56, 64
+  offset: 0, 0
+  index: -1
+restart
+  rotate: false
+  xy: 181, 159
+  size: 55, 47
+  orig: 55, 47
+  offset: 0, 0
+  index: -1
+info
+  rotate: false
+  xy: 962, 876
+  size: 35, 66
+  orig: 35, 66
+  offset: 0, 0
+  index: -1
+play
+  rotate: false
+  xy: 0, 0
+  size: 49, 41
+  orig: 49, 41
+  offset: 0, 0
+  index: -1
+playGreen
+  rotate: false
+  xy: 57, 65
+  size: 49, 41
+  orig: 49, 41
+  offset: 0, 0
+  index: -1
+
+play2.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+funbares1
+  rotate: false
+  xy: 0, 0
+  size: 480, 800
+  orig: 480, 800
+  offset: 0, 0
+  index: -1
+funbares2
+  rotate: false
+  xy: 481, 0
+  size: 480, 800
+  orig: 480, 800
+  offset: 0, 0
+  index: -1
+
+play3.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+funbares3
+  rotate: false
+  xy: 0, 49
+  size: 480, 800
+  orig: 480, 800
+  offset: 0, 0
+  index: -1
+box
+  rotate: false
+  xy: 481, 425
+  size: 293, 424
+  orig: 293, 424
+  offset: 0, 0
+  index: -1
+teachingFrame
+  rotate: false
+  xy: 481, 0
+  size: 293, 424
+  orig: 293, 424
+  offset: 0, 0
+  index: -1
+
+play4.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+facebook
+  rotate: false
+  xy: 0, 0
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+twitter
+  rotate: false
+  xy: 257, 0
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+
+play5.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+drinks/cerveza
+  rotate: false
+  xy: 0, 168
+  size: 151, 196
+  orig: 151, 196
+  offset: 0, 0
+  index: -1
+drinks/cosmopolitan
+  rotate: false
+  xy: 0, 0
+  size: 121, 167
+  orig: 121, 167
+  offset: 0, 0
+  index: -1
+drinks/gintonic
+  rotate: false
+  xy: 152, 161
+  size: 135, 203
+  orig: 135, 203
+  offset: 0, 0
+  index: -1
+drinks/whisky
+  rotate: false
+  xy: 122, 15
+  size: 108, 145
+  orig: 108, 145
+  offset: 0, 0
+  index: -1
+
+play6.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+people/borracho
+  rotate: false
+  xy: 0, 351
+  size: 230, 347
+  orig: 230, 347
+  offset: 0, 0
+  index: -1
+people/cam0
+  rotate: false
+  xy: 231, 342
+  size: 208, 356
+  orig: 208, 356
+  offset: 0, 0
+  index: -1
+people/cam1
+  rotate: false
+  xy: 440, 342
+  size: 208, 356
+  orig: 208, 356
+  offset: 0, 0
+  index: -1
+people/cachas
+  rotate: false
+  xy: 649, 335
+  size: 201, 363
+  orig: 201, 363
+  offset: 0, 0
+  index: -1
+people/abuelo
+  rotate: false
+  xy: 0, 0
+  size: 182, 350
+  orig: 182, 350
+  offset: 0, 0
+  index: -1
+people/cross
+  rotate: false
+  xy: 183, 85
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+people/rubia
+  rotate: false
+  xy: 440, 0
+  size: 169, 341
+  orig: 169, 341
+  offset: 0, 0
+  index: -1
+people/tick
+  rotate: false
+  xy: 610, 78
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+people/borrachoMano
+  rotate: false
+  xy: 183, 12
+  size: 69, 72
+  orig: 69, 72
+  offset: 0, 0
+  index: -1
+people/cachasMano
+  rotate: false
+  xy: 610, 10
+  size: 70, 67
+  orig: 70, 67
+  offset: 0, 0
+  index: -1
+people/abueloMano
+  rotate: false
+  xy: 253, 19
+  size: 69, 65
+  orig: 69, 65
+  offset: 0, 0
+  index: -1
+people/rubiaMano
+  rotate: false
+  xy: 681, 26
+  size: 68, 51
+  orig: 68, 51
+  offset: 0, 0
+  index: -1

@@ -32,9 +32,9 @@ public class Main implements IActionResolver{
 			settings.filterMin = TextureFilter.Linear;
 			settings.filterMag = TextureFilter.Linear;
 
-			TexturePacker.process(settings, "dataPC/screens/play/", "data_tmp/screens/play/", "play");			
+			TexturePacker.process(settings, "dataPC/screens/play/", "data/screens/play/", "play");			
 			
-			TexturePacker.process(settings, "dataPC/screens/background/", "data_tmp/screens/background", "bg");
+			TexturePacker.process(settings, "dataPC/screens/background/", "data/screens/background", "bg");
 		}
 		
 		new LwjglApplication(new Bar(resolver), "Bar", 480, 854, true);
