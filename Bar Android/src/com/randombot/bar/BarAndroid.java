@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Window;
 import android.view.WindowManager;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
@@ -16,11 +15,8 @@ public class BarAndroid extends AndroidApplication implements IActionResolver {
 	@Override 
 	public void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// Importante para que no se vea la barra superior de android don batería, conexiones,...
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,  WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); //Mantener la pantalla encendida sin usar permisos
+
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); 
 
 		AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
 		cfg.useAccelerometer = false;
