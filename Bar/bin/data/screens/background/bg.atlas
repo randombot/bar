@@ -1,0 +1,19 @@
+
+bg.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg
+  rotate: false
+  xy: 0, 0
+  size: 480, 800
+  orig: 480, 800
+  offset: 0, 0
+  index: -1
+table
+  rotate: false
+  xy: 481, 0
+  size: 464, 800
+  orig: 464, 800
+  offset: 0, 0
+  index: -1
