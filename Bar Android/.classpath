@@ -8,6 +8,6 @@
 	<classpathentry kind="lib" path="libs/gdx-backend-android.jar"/>
 	<classpathentry kind="lib" path="libs/gdx.jar"/>
 	<classpathentry kind="lib" path="libs/tween-engine-api.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Bar"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Bar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
