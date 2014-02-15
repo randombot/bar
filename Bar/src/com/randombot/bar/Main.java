@@ -6,8 +6,8 @@ import javax.swing.SwingUtilities;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
-import com.badlogic.gdx.tools.imagepacker.TexturePacker2;
-import com.badlogic.gdx.tools.imagepacker.TexturePacker2.Settings;
+import com.badlogic.gdx.tools.texturepacker.TexturePacker;
+import com.badlogic.gdx.tools.texturepacker.TexturePacker.Settings;
 
 public class Main implements IActionResolver{
 
@@ -32,9 +32,9 @@ public class Main implements IActionResolver{
 			settings.filterMin = TextureFilter.Linear;
 			settings.filterMag = TextureFilter.Linear;
 
-			TexturePacker2.process(settings, "dataPC/screens/play/", "data_tmp/screens/play/", "play");			
+			TexturePacker.process(settings, "dataPC/screens/play/", "data_tmp/screens/play/", "play");			
 			
-			TexturePacker2.process(settings, "dataPC/screens/background/", "data_tmp/screens/background", "bg");
+			TexturePacker.process(settings, "dataPC/screens/background/", "data_tmp/screens/background", "bg");
 		}
 		
 		new LwjglApplication(new Bar(resolver), "Bar", 480, 854, true);
@@ -42,7 +42,7 @@ public class Main implements IActionResolver{
 
 	@Override
 	public void openUri(String uri) {
-		Gdx.app.log("TOAST", "would have open URL");		
+		Gdx.app.log("TOAST", "would have opend URL");		
 	}
 
 	@Override
