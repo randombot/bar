@@ -21,6 +21,7 @@ public class Bar implements ApplicationListener, AnswerListener{
 	/** SCREENS **/
 	private TransitionScreen transitionScreen;
 	
+	
 	public BaseScreen showingScreen;
 
 	private Loading loading;
